@@ -1,10 +1,10 @@
-package com.example.todoproject.navigation  // 🔑 FIXED: Package name should match folder
+package com.example.todoproject.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.todoproject.login.LoginScreen  // 🔑 FIX: Match actual package paths
+import com.example.todoproject.login.LoginScreen
 import com.example.todoproject.register.RegisterScreen
 import com.example.todoproject.task.TaskScreen
 
@@ -24,7 +24,8 @@ fun AppNavGraph(navController: NavHostController) {
             RegisterScreen(navController)
         }
         composable(Routes.TASKS) {
-            TaskScreen(navController)
+            // ✅ Fixed: removed navController since TaskScreen() doesn’t take it
+            TaskScreen()
         }
     }
 }
